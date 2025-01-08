@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clock </title>
+    <title>Digital Clock</title>
     <link rel="stylesheet" href="style4.css">
+
 </head>
 <body>
     
+    <select id="timezoneSelect">
+        <option value="UTC">UTC</option>
+        <option value="Europe/Paris">Europe/Paris</option>
+        <option value="America/New_York">America/New_York</option>
+        <option value="Asia/Tokyo">Asia/Tokyo</option>
+        <option value="Africa/Lubumbashi">Lubumbashi (Congo)</option>
+        <!-- Ajoutez d'autres fuseaux horaires si nécessaire -->
+    </select>
+
     <div id="clock">
         <div id="hrDots" style="--clr: #0000ff;"></div>
         <div id="minDots" style="--clr: #ff0000;"></div>
         <div id="secDots" style="--clr: #ffff00;"></div>
     </div>
 
-</body>
-
 <script src="script1.js"></script>
+</body>
 </html>

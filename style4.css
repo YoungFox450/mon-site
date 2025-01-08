@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-body{
+body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #070707;
 }
-#clock{
+#clock {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,12 +32,12 @@ body{
     inset: -20px;
     border-radius: 50%;
     box-shadow: 25px 25px 75px rgba(0,0, 0, 0.25),
-    10px 10px 70px rgba(0,0, 0, 0.25),
-    inset 5px 5px 10px rgba(0,0, 0, 0.5),
-    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
-    inset 5px 5px 15px rgba(0,0, 0, 0.20);
+                10px 10px 70px rgba(0,0, 0, 0.25),
+                inset 5px 5px 10px rgba(0,0, 0, 0.5),
+                inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+                inset 5px 5px 15px rgba(0,0, 0, 0.20);
 }
-#hrDots h2, #minDots h2, #secDots h2{
+#hrDots h2, #minDots h2, #secDots h2 {
     position: absolute;
     text-align: center;
     transform: rotate(-90deg);
@@ -57,13 +58,12 @@ body{
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-#secDots b{
+#secDots b {
     position: absolute;
     color: #fff;
     display: inline-flex;
     transform: rotate(-90deg) translate(-30px, 90px);
 }
-
 #secDots .dot,
 #minDots .dot,
 #hrDots .dot {
@@ -76,25 +76,25 @@ body{
 }
 #secDots .active.dot,
 #minDots .active.dot,
-#hrDots .active.dot{
+#hrDots .active.dot {
     background: var(--clr);
     box-shadow: 0 0 10px var(--clr),
-    0 0 20px var(--clr),
-    0 0 30px var(--clr);
+                0 0 20px var(--clr),
+                0 0 30px var(--clr);
 }
 #secDots .active.dot ~ .dot,
 #minDots .active.dot ~ .dot,
-#hrDots .active.dot ~ .dot{
+#hrDots .active.dot ~ .dot {
     background: #222;
 } 
 #secDots .dot:nth-child(5n + 5),
-#minDots .dot:nth-child(5n + 5){
+#minDots .dot:nth-child(5n + 5) {
     width: 20px;
 }
 #hrDots .dot {
     width: 20px;
 }
-#hrDots .dot::before{
+#hrDots .dot::before {
     content: '';
     position: absolute;
     left: 0;
@@ -104,12 +104,17 @@ body{
     border-radius: 4px;
     background: var(--clr);
     box-shadow: 1.5px 9px var(--clr),
-    4px 18px var(--clr),
-    7px 27px var(--clr);
+                4px 18px var(--clr),
+                7px 27px var(--clr);
 }
 #hrDots .dot.active ~ .dot::before {
     background: #222;
     box-shadow: 1.5px 9px #222,
-    4px 18px #222,
-    7px 27px #222;
+                4px 18px #222,
+                7px 27px #222;
+}
+select {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
 }
