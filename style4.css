@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +18,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 80px; /* Espace entre les éléments de l'horloge */
 }
 #hrDots, #minDots, #secDots {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 200px; /* Largeur par défaut */
+    height: 200px; /* Hauteur par défaut */
     border-radius: 50%;
     rotate: 90deg;
 }
@@ -46,7 +47,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 4em;
+    font-size: 4em; /* Taille de police par défaut */
     font-weight: 500;
     color: var(--clr);
 }
@@ -113,8 +114,36 @@ body {
                 4px 18px #222,
                 7px 27px #222;
 }
-select {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
+
+/* Ligne de responsivité */
+@media (max-width: 768px) {
+    #clock {
+        flex-direction: column; /* Aligner les éléments en colonne sur les petits écrans */
+        gap: 40px; /* Réduire l'espace entre les éléments */
+    }
+    #hrDots, #minDots, #secDots {
+        width: 150px; /* Réduire la largeur pour les petits écrans */
+        height: 150px; /* Réduire la hauteur pour les petits écrans */
+    }
+    #hrDots h2, #minDots h2, #secDots h2 {
+        font-size: 3em; /* Réduire la taille de la police pour les petits écrans */
+    }
+}
+
+/* Ligne de responsivité */
+@media (max-width: 480px) {
+    #clock {
+        gap: 20px; /* Réduire encore l'espace pour les très petits écrans */
+    }
+    #hrDots, #minDots, #secDots {
+        width: 120px; /* Réduire encore la largeur */
+        height: 120px; /* Réduire encore la hauteur */
+    }
+    #hrDots h2, #minDots h2, #secDots h2 {
+        font-size: 2.5em; /* Réduire la taille de la police pour les très petits écrans */
+    }
+    select {
+        font-size: 14px; /* Réduire la taille de la police du sélecteur */
+        padding: 5px; /* Réduire le padding du sélecteur */
+    }
 }
